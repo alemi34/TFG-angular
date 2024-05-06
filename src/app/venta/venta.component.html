@@ -1,0 +1,46 @@
+<main>
+  <div class="formularioVenta">
+    <form action="">
+      <div>
+        <input type="text" name="Titulo" id="Titulo" [(ngModel)]="juego.nombre">
+        <label for="Titulo">Titulo</label>
+      </div>
+
+      <div class="checkboxInput">
+        <input type="checkbox" name="Accion" id="Accion" value="Accion" [(ngModel)]="juego.categoria">
+        <label for="Accion">Accion</label>
+
+        <input type="checkbox" name="RPG" id="RPG" value="RPG">
+        <label for="RPG">RPG</label>
+
+        <input type="checkbox" name="Aventura" id="Aventura" value="Aventura">
+        <label for="Aventura">Aventura</label>
+
+
+        <input type="checkbox" name="Multijugador" id="Multijugador" value="Multijugador">
+        <label for="Multijugador">Multijugador</label>
+
+        <input type="checkbox" name="Single" id="Single" value="Single">
+        <label for="Single">Single</label>
+      </div>
+
+
+      <div>
+        <input type="file" name="imagen" id="imagen" (change)="onFileSelected($event)">
+      </div>
+
+      <div>
+        <input type="number" name="Precio" id="Precio" min="0" [(ngModel)]="juego.precio">
+        <label for="Precio">Precio</label>
+      </div>
+
+      <div>
+        <input type="text" name="Descripcion" id="Descripcion" [(ngModel)]="juego.descripcion">
+        <label for="Descripcion">Descripcion</label>
+      </div>
+
+      <button class="Vender" (click)="guardarDatos()">Vender</button>
+    </form>
+
+  </div>
+</main>

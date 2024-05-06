@@ -1,0 +1,93 @@
+main {
+  display: flex;
+  background-image: url('../../assets/image1.png');
+  justify-content: center;
+}
+
+p{
+  font-family: 'Exo2';
+  }
+
+.contenedor {
+  display: flex;
+  width: 60rem;
+  background-color: #9AD0C2;
+  border-radius: 10px;
+  margin-bottom: 6.5rem;
+  margin-top: 6.5rem;
+  font-family: 'Exo2';
+}
+
+.infoPerfil {
+  width: 50%; /* Nuevo */
+}
+
+.historiales {
+  width: 50%; /* Nuevo */
+}
+
+input {
+  height: 2rem;
+  border-radius: 5px;
+}
+
+.infoPerfil h1 {
+  padding-left: 2rem;
+}
+
+.editarPerfil {
+  width: 80%;
+  margin-top: 2rem;
+  input {
+    width: 90%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 2rem;
+    font-family: 'Exo2';
+  }
+  .Editar {
+    height: 2.5rem;
+    width: 92%;
+    margin-left: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    background-color: #F1FADA;
+    font-family: 'Exo2';
+    font-size: 16px;
+  }
+}
+
+.tituloHistorial{
+  padding-left: 2rem;
+}
+
+.historicoCompra {
+  background-color: #F1FADA;
+  margin-left: 2rem;
+  width: 20rem;
+  border-radius: 5px;
+  border: solid 1px black;
+  div {
+    justify-content: center;
+    display: flex;
+    gap: 3rem;
+    font-family: 'Exo2';
+  }
+}
+
+.tituloVentas{
+  padding-left: 2rem;
+}
+.productosEnVenta {
+  background-color: #F1FADA;
+  margin-left: 2rem;
+  width: 20rem;
+  border-radius: 5px;
+  border: solid 1px black;
+  div {
+    justify-content: center;
+    display: flex;
+    gap: 2rem;
+    font-family: 'Exo2';
+  }
+}

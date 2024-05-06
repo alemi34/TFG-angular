@@ -1,0 +1,93 @@
+@font-face {
+  font-family: 'Exo2';
+  src: url(../assets/fonts/Exo2-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Jersey10';
+  src: url(../assets/fonts/Jersey10-Regular.ttf);
+}
+
+* {
+  margin: 0px;
+}
+
+body {
+  margin: 0px;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #265073;
+  height: 100px;
+}
+
+#general {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+}
+
+#titulo {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 4rem;
+  font-family: 'Jersey10';
+}
+
+#vender {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  margin-top: 2rem;
+  height: 50%;
+  width: 6rem;
+  background-color: #9AD0C2;
+  font-family: 'Exo2';
+  font-weight: 600;
+}
+
+nav {
+  display: flex;
+  background-color: #2D9596;
+  height: 2rem;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Jersey10';
+}
+
+nav p {
+  padding: 0.5rem 4rem;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+
+img {
+  height: 7rem;
+}
+
+footer {
+  padding-top: 2rem;
+  border-top: 5px solid black;
+  background-color: #265073;
+  color: white;
+  padding-bottom: 2rem;
+  padding-left: 2rem;
+}
+
+footer a {
+  color: white;
+}

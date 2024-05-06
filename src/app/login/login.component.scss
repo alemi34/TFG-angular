@@ -1,0 +1,58 @@
+main {
+  padding: 13rem;
+  display: flex;
+  background-image: url('../../assets/image1.png');
+  justify-content: center;
+}
+label{
+  font-family: 'Exo2';
+
+}
+button{
+    font-family: 'Exo2';
+}
+h2{
+  display: flex;
+  justify-content: center;
+}
+
+#Register {
+  width: 30rem;
+  background-color: #9AD0C2;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+
+}
+
+input{
+  height: 2rem;
+  border-radius: 5px;
+}
+
+form{
+  margin-left: 2rem;
+  margin-right: 2rem;
+  padding-bottom: 2rem;
+}
+
+
+#Correo{
+  width: 90%;
+}
+
+
+#Contraseña{
+  width: 90%;
+}
+
+#submit{
+  margin-left: 9rem;
+  height: 2rem;
+  width: 5rem;
+  background-color: #F1FADA;
+}
+
+
+
+

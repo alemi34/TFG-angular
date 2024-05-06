@@ -1,0 +1,12 @@
+<main>
+  <input type="text" id="Buscador" placeholder="Search">
+  <div class="cardContainer">
+      <div class="card" *ngFor="let juego of juegos" [routerLink]="['/details', juego.idJuego]">
+        <img src="{{juego?.imagen}}" alt="{{juego?.idJuego}}">
+        <div class="cardInfo">
+          <h2>{{juego?.nombre}}</h2>
+          <h3>PC</h3>
+        </div>
+      </div>
+    </div>
+</main>

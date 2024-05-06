@@ -1,0 +1,26 @@
+
+<main>
+  <div id="Register">
+    <h2>Login</h2>
+    <br>
+    <form action="">
+      <div id="divCorreo">
+        <label for="Correo">Correo</label>
+        <br>
+        <input type="email" name="Correo" id="Correo" [(ngModel)]="email">
+      </div>
+      <br>
+      <br>
+
+      <div id="divContraseña">
+        <label for="Contraseña">Contraseña</label>
+        <br>
+        <input type="password" name="Contraseña" id="Contraseña" [(ngModel)]="password">
+      </div>
+      <br>
+      <br>
+      <button (click)="login()" type="submit" id="submit">Submit</button>
+    </form>
+  </div>
+
+</main>

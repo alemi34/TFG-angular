@@ -1,0 +1,44 @@
+main {
+  display: flex;
+  background-image: url('../../assets/image1.png');
+  justify-content: center;
+}
+h1{
+  padding-top: 1rem;
+  margin-left: 40%;
+}
+.contenedor{
+  width: 60rem;
+  background-color: #9AD0C2;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+.botones{
+  margin-top: 2rem;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  gap: 2rem;
+}
+.DatosVenta{
+  border: solid 1px black;
+  padding-left: 5rem;
+  padding-right: 10rem;
+  background-color: #F1FADA;
+  display: flex;
+  gap: 3rem;
+}
+.Venta{
+  gap: 10rem;
+  align-items: center;
+  display: flex;
+  margin-left: 2rem;
+}
+
+button{
+  height: 3.12rem;
+  width: 5rem;
+  background-color: #F1FADA;
+  margin-bottom: 2rem;
+}
