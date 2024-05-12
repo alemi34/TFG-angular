@@ -2,20 +2,19 @@
   <p routerLink="/" class="enlace">Inicio</p>
   <p routerLink="/venta" class="enlace">Solicitud Venta</p>
   <!--TODO falta de hacer con el login y pasarle la redireccion e ID-->
-  <p routerLink="/perfil" class="enlace">Perfil</p>
+  <p routerLink="/login" class="enlace" *ngIf="!user">Login</p>
+  <p routerLink="/register" class="enlace" *ngIf="!user">Register</p>
+  <p routerLink="/perfil" class="enlace"*ngIf="user">Perfil</p>
   <p routerLink="/pagar" class="enlace">Carrito</p>
 </nav>
 <main>
-  <!-- TODO Aqui poner un [ngClass] para que diferencie clases y agregue mas padding o menos-->
-  <!--Temporalmente esta sin padding y sin centrar hasta que agregue la funcionalidad  de ngClass y el ts-->
   <div class="contenedor">
     <h1>Ventas activas</h1>
-    <div class="Venta">
-      <div class="DatosVenta">
-        <p>1</p>
-        <p>24/04/24</p>
-        <p>40€</p>
-        <p>Elden Ring</p>
+    <div class="Venta" *ngFor="let venta of ventas;">
+      <div class="DatosVenta" >
+        <p>{{venta.idJuego}}</p>
+        <p>{{venta.idUsuario}}</p>
+        <p>{{venta.operacion}}</p>
       </div>
       <div class="botones">
         <button id="Editar">Editar</button>

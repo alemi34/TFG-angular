@@ -62,6 +62,15 @@ export class AuthService {
     return this.usuario;
   }
 
+  modificarUsuario(email: string, user:Usuario){
+    console.log(user)
+    console.log(email)
+    console.log(this.url+email)
+    return this.httpClient.put(this.url+email, JSON.stringify(user), this.httpOptions).pipe(
+      catchError(this.errorHandler)
+    );
+  }
+
   registerUsers(user: Usuario): Observable<any> {
     return this.httpClient.post<any>(this.url, user, this.httpOptions).pipe(
       catchError(this.errorHandler)

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from './../servicios/auth.service';
+import { Usuario } from '../model/user';
 
 @Component({
   selector: 'app-login',
@@ -11,8 +12,14 @@ export class LoginComponent {
   email!: string;
   password!: string;
   error!: string;
+  public user!: Usuario;
 
   constructor(private authService: AuthService){}
+
+  ngOnInit(): void {
+    this.user = this.authService.getUsuario()
+    console.log(this.user)
+  }
 
   login(){
     // Verifica si el correo electrónico y la contraseña están presentes

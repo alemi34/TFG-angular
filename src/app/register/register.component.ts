@@ -14,11 +14,17 @@ export class RegisterComponent {
   apellido!: string;
   password!: string
   password2!: string
+  public user!: Usuario;
 
     constructor(
       private authService: AuthService,
       private router: Router
     ) {}
+
+    ngOnInit(): void {
+      this.user = this.authService.getUsuario()
+      console.log(this.user)
+    }
 
     crearUser() {
       this.usuario.nombreCompleto = `${this.nombre} ${this.apellido}`;
