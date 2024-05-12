@@ -15,41 +15,23 @@ export class VentaComponent {
 
   constructor(private datosService: DatosService){}
 
-  guardarDatos(){
-    if(this.juego !== undefined && this.imagenBytes !== undefined){
-      this.juego.cantidad = 1;
-      this.juego.imagen = this.imagenBytes;
-
-
-      // Utiliza el operador 'pipe' para encadenar operadores y realizar una operación antes de la suscripción
-      this.datosService.createJuego(this.juego).pipe(
-        tap(response => {
-          console.log('Operación antes de la suscripción:', response);
-          // Aquí puedes realizar cualquier operación que desees antes de la suscripción
-        })
-      ).subscribe(response => {
-        console.log('Juego creado correctamente', response);
-      },
-      error => {
-        console.error('Error al crear', error);
-      });
+  onFileSelected(event: Event) {
+    const inputElement = event.target as HTMLInputElement;
+    const files = inputElement.files;
+    if (files && files.length > 0) {
+      this.juego.imagen = files[0];
     } else {
-      alert('No se han rellenado todos los campos');
+      console.error('No se seleccionó ningún archivo');
     }
   }
 
-  onFileSelected(event: any) {
-    const file: File | null = event.target.files ? event.target.files[0] : null;
-    if (file !== null) {
-      const reader = new FileReader();
-      reader.onload = () => {
-        const arrayBuffer: ArrayBuffer | null = reader.result as ArrayBuffer;
-        if (arrayBuffer) {
-          this.imagenBytes = new Uint8Array(arrayBuffer);
-          console.log('Imagen convertida a byte[]:', this.imagenBytes);
-        }
-      };
-      reader.readAsArrayBuffer(file);
-    }
+
+  guardarDatos() {
+    this.datosService.createJuego(this.juego)
+      .subscribe(response => {
+        console.log('Juego subido exitosamente', response);
+      }, error => {
+        console.error('Error al subir el juego', error);
+      });
   }
 }

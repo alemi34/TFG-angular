@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Juego } from '../model/games';
 import { ActivatedRoute } from '@angular/router';
 import { DatosService } from '../servicios/datos.service';
+import { CarritoService } from '../servicios/carrito.service';
 
 @Component({
   selector: 'app-game-detail',
@@ -11,7 +12,7 @@ import { DatosService } from '../servicios/datos.service';
 export class GameDetailComponent {
   id!: number;
   game!: Juego;
-  constructor(public datosService: DatosService ,private route: ActivatedRoute) { }
+  constructor(public datosService: DatosService ,private route: ActivatedRoute, private carrito:CarritoService) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['idJuego'];
@@ -19,5 +20,9 @@ export class GameDetailComponent {
     this.datosService.getJuego(this.id).subscribe((juego: Juego) =>{
       this.game = juego;
     })
+  }
+  addTocart(){
+    console.log(this.game)
+    this.carrito.addToCart(this.game)
   }
 }

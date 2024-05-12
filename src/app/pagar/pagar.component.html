@@ -1,1 +1,17 @@
-<p>pagar works!</p>
+<nav>
+  <p routerLink="/" class="enlace">Inicio</p>
+  <p routerLink="/venta" class="enlace">Solicitud Venta</p>
+  <!--TODO falta de hacer con el login y pasarle la redireccion e ID-->
+  <p routerLink="/perfil" class="enlace">Perfil</p>
+  <p routerLink="/pagar" class="enlace">Carrito</p>
+</nav>
+<main>
+  <div class="contenedor">
+    <!--TODO ngfor del servicio-->
+    <div class="juego" *ngFor="let item of items">
+      <p>{{item.nombre}}</p>
+      <p>{{item.precio}}</p>
+    </div>
+    <button>Pagar</button>
+  </div>
+</main>

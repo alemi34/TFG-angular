@@ -1,5 +1,6 @@
 main {
   background-color: #F1FADA;
+  height: 80vh;
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
@@ -50,4 +51,22 @@ input{
   width: 14rem;
   font-family: 'Exo2';
   font-weight: 1000;
+}
+
+
+nav {
+  display: flex;
+  background-color: #2D9596;
+  height: 2rem;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Jersey10';
+}
+
+nav p {
+  padding: 0.5rem 4rem;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
 }

@@ -1,14 +1,12 @@
-import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { catchError } from 'rxjs/operators';
-import { Observable, throwError } from 'rxjs';
-import { Juego } from '../model/games';
+import { Injectable } from '@angular/core';
+import { Observable, catchError, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class DatosService {
-  private url = 'https://localhost:7149/api/Juegos/'
+export class FacturasService {
+  private url = 'https://localhost:7149/api/Facturas/'
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -18,18 +16,20 @@ export class DatosService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getJuegos(): Observable<any> {
+  getFacturas(): Observable<any> {
     return this.httpClient.get(this.url).pipe(catchError(this.errorHandler));
   }
 
-  getJuego(id: number): Observable<any> {
-    return this.httpClient.get(`${this.url}${id}`).pipe(catchError(this.errorHandler));
+  getFacturasById(id: number): Observable<any>{
+    return this.httpClient.get(`${this.url}ByUserId/${id}`)
   }
 
-  createJuego(juego: Juego): Observable<any> {
-    console.log(juego)
-    return this.httpClient.post(this.url, juego, this.httpOptions).pipe(catchError(this.errorHandler));
-  }
+
+
+
+
+
+
 
   errorHandler(error: any) {
     let errorMessage = '';

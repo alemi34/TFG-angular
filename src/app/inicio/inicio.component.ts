@@ -11,7 +11,7 @@ import { Usuario } from '../model/user';
 })
 export class InicioComponent implements OnInit {
   public juegos: Juego[] = [];
-  //public user!: Usuario;
+  public user!: Usuario;
 
   constructor(private datosService: DatosService, private authService: AuthService) {
   }
@@ -21,8 +21,8 @@ export class InicioComponent implements OnInit {
         this.juegos = juego;
       }
     )
-    //this.user = this.authService.getUsuario()
-    //console.log(this.user)
+    this.user = this.authService.getUsuario()
+    console.log(this.user)
   }
 
 }

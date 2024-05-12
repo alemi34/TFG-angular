@@ -1,0 +1,62 @@
+main {
+  display: flex;
+  background-image: url('../../assets/image1.png');
+  justify-content: center;
+  height: 90vh;
+}
+
+h1 {
+  padding-top: 1rem;
+  text-align: center;
+}
+
+.contenedor {
+  width: 60rem;
+  background-color: #9AD0C2;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+.botones {
+  margin-top: 2rem;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  gap: 2rem;
+}
+
+.DatosVenta {
+  justify-content: center;
+  border: solid 1px black;
+  background-color: #F1FADA;
+  display: flex;
+  gap: 8rem;
+  margin: 2rem;
+}
+
+button {
+  height: 3.12rem;
+  width: 5rem;
+  background-color: #F1FADA;
+  margin-bottom: 2rem;
+}
+
+
+nav {
+  display: flex;
+  background-color: #2D9596;
+  height: 2rem;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Jersey10';
+}
+
+nav p {
+  padding: 0.5rem 4rem;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+

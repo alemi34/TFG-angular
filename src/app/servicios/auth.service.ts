@@ -1,5 +1,5 @@
 import { Observable, catchError, throwError } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Usuario } from '../model/user';
 
@@ -12,14 +12,19 @@ export class AuthService {
   private url = 'https://localhost:7149/api/Usuarios/'
   usuario!: Usuario
 
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  }
 
   constructor(private httpClient: HttpClient) { }
 
-  getUser(email: string): Observable<any>{
+  getUser(email: string): Observable<any> {
     return this.httpClient.get(`${this.url}${email}`).pipe(catchError(this.errorHandler));
   }
 
-  login(email:string, password:string): Observable<boolean>{
+  login(email: string, password: string): Observable<boolean> {
     return new Observable<boolean>((observer) => {
       this.getUser(email).subscribe(
         (user) => {
@@ -27,14 +32,16 @@ export class AuthService {
           if (user) {
             // Guardamos los datos del usuario en la variable usuario
             this.usuario = user;
-            console.log(this.usuario)
+            console.log(this.usuario, "antes")
             // Verificamos si la contraseña coincide
             if (this.usuario.contraseña === password) {
               // Si coincide, establecemos isLoggedIn en true y almacenamos el correo electrónico del usuario
+              console.log(this.usuario)
               this.isLogged = true;
               this.userEmail = email;
               observer.next(true); // Credenciales válidas
             } else {
+              this.usuario = new Usuario;
               observer.next(false); // Contraseña inválida
             }
           } else {
@@ -51,6 +58,16 @@ export class AuthService {
     });
   }
 
+  getUsuario(): any {
+    return this.usuario;
+  }
+
+  registerUsers(user: Usuario): Observable<any> {
+    return this.httpClient.post<any>(this.url, user, this.httpOptions).pipe(
+      catchError(this.errorHandler)
+    );
+  }
+
 
   errorHandler(error: any) {
     let errorMessage = '';
@@ -64,7 +81,4 @@ export class AuthService {
     return throwError(errorMessage);
   }
 
-  getUsuario(): any {
-    return this.usuario;
-  }
 }

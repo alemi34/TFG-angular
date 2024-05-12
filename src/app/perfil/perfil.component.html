@@ -1,33 +1,32 @@
+<nav>
+  <p routerLink="/" class="enlace">Inicio</p>
+  <p routerLink="/venta" class="enlace">Solicitud Venta</p>
+  <!--TODO falta de hacer con el login y pasarle la redireccion e ID-->
+  <p routerLink="/perfil" class="enlace">Perfil</p>
+  <p routerLink="/pagar" class="enlace">Carrito</p>
+</nav>
 <main>
   <div class="contenedor">
     <div class="infoPerfil">
       <h1>Datos Personales</h1>
       <form action="" class="editarPerfil">
-        <input type="text" name="Nombre" id="Nombre" readonly value="Adrian">
-        <input type="text" name="Apellido" id="Apellido" readonly value="Ledesma">
-        <input type="email" name="Email" id="Email" readonly value="2004alemi@gmail.com">
-        <input type="tel" name="Telefono" id="Telefono" readonly value="000000000">
-        <input type="text" name="Direccion" id="Direccion" readonly value="Huesca">
+        <input type="text" name="Nombre" id="Nombre" readonly value="{{separatedWords[0]}}">
+        <input type="text" name="Apellido" id="Apellido" readonly value="{{separatedWords[1]}}">
+        <input type="email" name="Email" id="Email" readonly value="{{user.email}}">
+        <input type="tel" name="Telefono" id="Telefono" readonly value="{{user.telefono}}">
+        <input type="text" name="Direccion" id="Direccion" readonly value="{{user.direccion}}">
         <button class="Editar">Editar</button>
       </form>
     </div>
     <div class="historiales">
       <h1 class="tituloHistorial">Historico Compra</h1>
-      <div class="historicoCompra">
-        <div class="texto">
-          <p>1</p>
-          <p>24/4/24</p>
-          <p>40€</p>
-        </div>
-        <div class="texto">
-          <p>2</p>
-          <p>24/4/24</p>
-          <p>40€</p>
-        </div>
-        <div class="texto">
-          <p>3</p>
-          <p>24/4/24</p>
-          <p>40€</p>
+      <div class="historicoCompra" routerLink="/facturas">
+        <div class="texto" *ngFor="let factura of facturas; let i = index">
+          <ng-container *ngIf="i<3">
+            <p>{{factura.idFactura}}</p>
+            <p>{{factura.fecha}}</p>
+            <p>{{factura.precio}}</p>
+          </ng-container>
         </div>
       </div>
       <h1 class="tituloVentas">Productos en venta</h1>

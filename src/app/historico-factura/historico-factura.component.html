@@ -1,1 +1,19 @@
-<p>historico-factura works!</p>
+<nav>
+  <p routerLink="/" class="enlace">Inicio</p>
+  <p routerLink="/venta" class="enlace">Solicitud Venta</p>
+  <!--TODO falta de hacer con el login y pasarle la redireccion e ID-->
+  <p routerLink="/perfil" class="enlace">Perfil</p>
+  <p routerLink="/pagar" class="enlace">Carrito</p>
+</nav>
+<main>
+  <div class="contenedor">
+    <h1>Historial de facturas</h1>
+    <div class="Venta">
+      <div class="DatosVenta" *ngFor="let factura of facturas; let i = index">
+        <p>{{factura.idFactura}}</p>
+        <p>{{factura.fecha}}</p>
+        <p>{{factura.precio}}</p>
+      </div>
+    </div>
+  </div>
+</main>

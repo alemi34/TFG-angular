@@ -1,3 +1,10 @@
+<nav>
+  <p routerLink="/" class="enlace">Inicio</p>
+  <p routerLink="/venta" class="enlace">Solicitud Venta</p>
+  <!--TODO falta de hacer con el login y pasarle la redireccion e ID-->
+  <p routerLink="/perfil" class="enlace">Perfil</p>
+  <p routerLink="/pagar" class="enlace">Carrito</p>
+</nav>
 <main>
   <div id="Register">
     <h2>Register</h2>
@@ -7,12 +14,12 @@
         <div id="divNombre">
           <label for="Nombre">Nombre</label>
           <br>
-          <input type="text" name="Nombre" id="Nombre" />
+          <input type="text" name="Nombre" id="Nombre" [(ngModel)]="nombre"/>
         </div>
         <div id="divApellido">
           <label for="Apellido">Apellido</label>
           <br>
-          <input type="text" name="Apellido" id="Apellido" />
+          <input type="text" name="Apellido" id="Apellido" [(ngModel)]="apellido"/>
         </div>
       </div>
       <br>
@@ -20,7 +27,7 @@
       <div id="divCorreo">
         <label for="Correo">Correo</label>
         <br>
-        <input type="email" name="Correo" id="Correo">
+        <input type="email" name="Correo" id="Correo" [(ngModel)]="usuario.email">
       </div>
       <br>
       <br>
@@ -28,7 +35,7 @@
       <div id="divContraseña">
         <label for="Contraseña">Contraseña</label>
         <br>
-        <input type="password" name="Contraseña" id="Contraseña">
+        <input type="password" name="Contraseña" id="Contraseña" [(ngModel)]="password">
       </div>
       <br>
       <br>
@@ -36,7 +43,7 @@
       <div id="divRepetirContraseña">
         <label for="RepetirContraseña">Repetir Contraseña</label>
         <br>
-        <input type="password" name="RepetirContraseña" id="RepetirContraseña">
+        <input type="password" name="RepetirContraseña" id="RepetirContraseña" [(ngModel)]="password2">
       </div>
       <br>
       <br>
@@ -44,7 +51,7 @@
       <div id="divTelefono">
         <label for="Telefono">Telefono</label>
         <br>
-        <input type="tel" name="Telefono" id="Telefono">
+        <input type="tel" name="Telefono" id="Telefono" [(ngModel)]="usuario.telefono">
       </div>
       <br>
       <br>
@@ -52,11 +59,11 @@
       <div id="divDireccion">
         <label for="Direccion">Direccion</label>
         <br>
-        <input type="tel" name="Direccion" id="Direccion">
+        <input type="tel" name="Direccion" id="Direccion" [(ngModel)]="usuario.direccion">
       </div>
       <br>
       <br>
-      <button type="submit" id="submit">Submit</button>
+      <button type="submit" id="submit" (click)="crearUser()">Submit</button>
     </form>
   </div>
 
