@@ -1,25 +1,26 @@
 <nav>
   <p routerLink="/" class="enlace">Inicio</p>
   <p routerLink="/venta" class="enlace">Solicitud Venta</p>
-  <!--TODO falta de hacer con el login y pasarle la redireccion e ID-->
   <p routerLink="/login" class="enlace" *ngIf="!user">Login</p>
   <p routerLink="/register" class="enlace" *ngIf="!user">Register</p>
-  <p routerLink="/perfil" class="enlace"*ngIf="user">Perfil</p>
+  <p routerLink="/perfil" class="enlace" *ngIf="user">Perfil</p>
   <p routerLink="/pagar" class="enlace">Carrito</p>
 </nav>
 <main>
   <div class="contenedor">
     <h1>Ventas activas</h1>
     <div class="Venta" *ngFor="let venta of ventas;">
-      <div class="DatosVenta" >
-        <p>{{venta.idJuego}}</p>
-        <p>{{venta.idUsuario}}</p>
-        <p>{{venta.operacion}}</p>
-      </div>
-      <div class="botones">
-        <button id="Editar">Editar</button>
-        <button id="Borrar">Eliminar</button>
-      </div>
+      <ng-container *ngIf="venta.operacion === 'V'">
+        <div class="DatosVenta">
+          <p>{{venta.idJuego}}</p>
+          <p>{{venta.idUsuario}}</p>
+          <p>{{venta.operacion}}</p>
+        </div>
+        <div class="botones">
+          <button id="Editar" (click)="editar(venta.idJuego)">Editar</button>
+          <button id="Borrar">Eliminar</button>
+        </div>
+      </ng-container>
     </div>
   </div>
 </main>

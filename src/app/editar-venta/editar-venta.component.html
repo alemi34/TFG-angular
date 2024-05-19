@@ -8,10 +8,11 @@
 </nav>
 <main>
   <div class="contenedor">
-    <div class="juego" *ngFor="let item of items">
-      <p>{{item.nombre}}</p>
-      <p>{{item.precio}}</p>
-    </div>
-    <button>Pagar</button>
+    <form action="" class="editarJuego">
+      <input type="text" name="nombre" id="nombre" [(ngModel)]="juego.nombre">
+      <input type="number" name="precio" id="precio" [(ngModel)]="juego.precio">
+      <input type="text" name="descripcion" id="descripcion" [(ngModel)]="juego.descripcion">
+      <button class="editar" (click)="editar()">Editar</button>
+    </form>
   </div>
 </main>

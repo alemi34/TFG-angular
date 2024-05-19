@@ -1,10 +1,9 @@
 <nav>
   <p routerLink="/" class="enlace">Inicio</p>
   <p routerLink="/venta" class="enlace">Solicitud Venta</p>
-  <!--TODO falta de hacer con el login y pasarle la redireccion e ID-->
   <p routerLink="/login" class="enlace" *ngIf="!user">Login</p>
   <p routerLink="/register" class="enlace" *ngIf="!user">Register</p>
-  <p routerLink="/perfil" class="enlace"*ngIf="user">Perfil</p>
+  <p routerLink="/perfil" class="enlace" *ngIf="user">Perfil</p>
   <p routerLink="/pagar" class="enlace">Carrito</p>
 </nav>
 <main>
@@ -12,7 +11,7 @@
     <div class="infoPerfil">
       <h1>Datos Personales</h1>
       <form action="" class="editarPerfil">
-        <input type="text" name="Nombre" id="Nombre" readonly value="{{separatedWords[0]}}" >
+        <input type="text" name="Nombre" id="Nombre" readonly value="{{separatedWords[0]}}">
         <input type="text" name="Apellido" id="Apellido" readonly value="{{separatedWords[1]}}">
         <input type="email" name="Email" id="Email" [(ngModel)]="user.email" readonly value="{{user.email}}">
         <input type="tel" name="Telefono" id="Telefono" [(ngModel)]="user.telefono" readonly value="{{user.telefono}}">
@@ -33,9 +32,9 @@
         </div>
       </div>
       <h1 class="tituloVentas">Productos en venta</h1>
-      <div class="productosEnVenta">
+      <div class="productosEnVenta" routerLink="/ventas">
         <div class="texto" *ngFor="let venta of ventas; let i = index">
-          <ng-container *ngIf="i<3">
+          <ng-container *ngIf="i<3 && venta.operacion === 'V'">
             <p>{{venta.idJuego}}</p>
             <p>{{venta.idUsuario}}</p>
             <p>{{venta.operacion}}</p>

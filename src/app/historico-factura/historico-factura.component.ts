@@ -10,10 +10,10 @@ import { FacturasService } from '../servicios/facturas.service';
   styleUrls: ['./historico-factura.component.scss']
 })
 export class HistoricoFacturaComponent {
-  public facturas: Factura[]= []
-  public user! : Usuario;
+  public facturas: Factura[] = []
+  public user!: Usuario;
 
-  constructor(private authService: AuthService, private facturaService: FacturasService) {}
+  constructor(private authService: AuthService, private facturaService: FacturasService) { }
 
   ngOnInit(): void {
     this.user = this.authService.getUsuario();

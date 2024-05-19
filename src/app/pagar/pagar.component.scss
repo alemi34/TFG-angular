@@ -6,7 +6,7 @@ main {
 }
 
 .contenedor {
-  position:relative;
+  position: relative;
   width: 60rem;
   background-color: #9AD0C2;
   border-radius: 10px;
@@ -15,7 +15,7 @@ main {
   font-family: 'Exo2';
 }
 
-.juego{
+.juego {
   margin: 1rem;
   display: flex;
   gap: 15rem;
@@ -26,7 +26,7 @@ main {
 }
 
 button {
-  position:absolute;
+  position: absolute;
   right: 1.5rem;
   bottom: 2rem;
   height: 2.5rem;

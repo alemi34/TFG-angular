@@ -3,9 +3,8 @@ main {
   background-image: url('../../assets/image1.png');
   justify-content: center;
 
-
-p{
-  font-family: 'Exo2';
+  p {
+    font-family: 'Exo2';
   }
 }
 
@@ -20,11 +19,13 @@ p{
 }
 
 .infoPerfil {
-  width: 50%; /* Nuevo */
+  width: 50%;
+  /* Nuevo */
 }
 
 .historiales {
-  width: 50%; /* Nuevo */
+  width: 50%;
+  /* Nuevo */
 }
 
 input {
@@ -39,6 +40,7 @@ input {
 .editarPerfil {
   width: 80%;
   margin-top: 2rem;
+
   input {
     width: 90%;
     margin-top: 1rem;
@@ -46,6 +48,7 @@ input {
     margin-left: 2rem;
     font-family: 'Exo2';
   }
+
   .Editar {
     height: 2.5rem;
     width: 92%;
@@ -58,7 +61,7 @@ input {
   }
 }
 
-.tituloHistorial{
+.tituloHistorial {
   padding-left: 2rem;
 }
 
@@ -68,6 +71,7 @@ input {
   width: 20rem;
   border-radius: 5px;
   border: solid 1px black;
+
   div {
     justify-content: center;
     display: flex;
@@ -76,15 +80,17 @@ input {
   }
 }
 
-.tituloVentas{
+.tituloVentas {
   padding-left: 2rem;
 }
+
 .productosEnVenta {
   background-color: #F1FADA;
   margin-left: 2rem;
   width: 20rem;
   border-radius: 5px;
   border: solid 1px black;
+
   div {
     justify-content: center;
     display: flex;
@@ -110,4 +116,3 @@ nav p {
   border-left: 1px solid black;
   border-right: 1px solid black;
 }
-

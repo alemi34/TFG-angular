@@ -17,6 +17,7 @@ import { HistoricoFacturaComponent } from './historico-factura/historico-factura
 import { HistoricoVentaComponent } from './historico-venta/historico-venta.component';
 import { PagarComponent } from './pagar/pagar.component';
 import { FormsModule } from '@angular/forms';
+import { EditarVentaComponent } from './editar-venta/editar-venta.component';
 
 
 
@@ -31,7 +32,8 @@ import { FormsModule } from '@angular/forms';
     VentaComponent,
     HistoricoFacturaComponent,
     HistoricoVentaComponent,
-    PagarComponent
+    PagarComponent,
+    EditarVentaComponent
   ],
   imports: [
     BrowserModule,

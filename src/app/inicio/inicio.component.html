@@ -1,21 +1,23 @@
 <nav>
   <p routerLink="/" class="enlace">Inicio</p>
   <p routerLink="/venta" class="enlace">Solicitud Venta</p>
-  <!--TODO falta de hacer con el login y pasarle la redireccion e ID-->
   <p routerLink="/login" class="enlace" *ngIf="!user">Login</p>
   <p routerLink="/register" class="enlace" *ngIf="!user">Register</p>
-  <p routerLink="/perfil" class="enlace"*ngIf="user">Perfil</p>
+  <p routerLink="/perfil" class="enlace" *ngIf="user">Perfil</p>
   <p routerLink="/pagar" class="enlace">Carrito</p>
 </nav>
 <main>
-  <input type="text" id="Buscador" placeholder="Search">
+  <input type="text" id="Buscador" placeholder="Search" [(ngModel)]="input">
+  <button class="buscar" (click)="navegar()">Buscar</button>
   <div class="cardContainer">
-      <div class="card" *ngFor="let juego of juegos" [routerLink]="['/details', juego.idJuego]">
+    <ng-container  *ngFor="let juego of juegos">
+      <div class="card" [routerLink]="['/details', juego.idJuego]" *ngIf="juego.cantidad >0">
         <img src="{{juego?.imagen}}" alt="{{juego?.idJuego}}">
         <div class="cardInfo">
           <h2>{{juego?.nombre}}</h2>
           <h3>PC</h3>
         </div>
       </div>
-    </div>
+    </ng-container>
+  </div>
 </main>

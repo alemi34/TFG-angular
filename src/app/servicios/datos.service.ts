@@ -31,6 +31,17 @@ export class DatosService {
     return this.httpClient.post(this.url, juego, this.httpOptions).pipe(catchError(this.errorHandler));
   }
 
+  searchGame(juego: string): Observable<any> {
+    console.log(juego)
+    return this.httpClient.get(`${this.url}nombre/${juego}`).pipe(catchError(this.errorHandler))
+  }
+
+  modificarJuego(idJuego: number, Juego: Juego) {
+    console.log(Juego)
+    console.log(idJuego)
+    return this.httpClient.put(`${this.url}${idJuego}`, Juego, this.httpOptions).pipe(catchError(this.errorHandler));
+  }
+
   errorHandler(error: any) {
     let errorMessage = '';
 

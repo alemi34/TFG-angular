@@ -4,14 +4,16 @@ main {
   background-image: url('../../assets/image1.png');
   justify-content: center;
 }
-label{
-  font-family: 'Exo2';
 
+label {
+  font-family: 'Exo2';
 }
-button{
-    font-family: 'Exo2';
+
+button {
+  font-family: 'Exo2';
 }
-h2{
+
+h2 {
   display: flex;
   justify-content: center;
 }
@@ -22,31 +24,28 @@ h2{
   border-radius: 10px;
   margin-bottom: 1rem;
   margin-top: 1rem;
-
 }
 
-input{
+input {
   height: 2rem;
   border-radius: 5px;
 }
 
-form{
+form {
   margin-left: 2rem;
   margin-right: 2rem;
   padding-bottom: 2rem;
 }
 
-
-#Correo{
+#Correo {
   width: 90%;
 }
 
-
-#Contraseña{
+#Contraseña {
   width: 90%;
 }
 
-#submit{
+#submit {
   margin-left: 9rem;
   height: 2rem;
   width: 5rem;
@@ -69,8 +68,3 @@ nav p {
   border-left: 1px solid black;
   border-right: 1px solid black;
 }
-
-
-
-
-

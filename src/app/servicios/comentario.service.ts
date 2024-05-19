@@ -1,12 +1,14 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, throwError } from 'rxjs';
+import { Comentario } from '../model/comentario';
 
 @Injectable({
   providedIn: 'root'
 })
-export class VentasService {
-  private url = 'https://localhost:7149/api/UserBuy/'
+
+export class ComentarioService {
+  private url = 'https://localhost:7149/api/Comentarios/'
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -16,23 +18,18 @@ export class VentasService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getVentas(): Observable<any> {
+  getAll(): Observable<any> {
     return this.httpClient.get(this.url).pipe(catchError(this.errorHandler))
   }
 
-  getVentaById(userId : number): Observable<any> {
-    return this.httpClient.get(`${this.url}User/${userId}`).pipe(catchError(this.errorHandler))
+  createComent(comentario: Comentario): Observable<any>{
+    console.log(comentario)
+    return this.httpClient.post(this.url, comentario, this.httpOptions)
   }
 
-  deleteVenta(userId : number, gameId : number) {
-    // TODO hacer que cuando se quite uno se ponga en 0 la cantidad
-    return this.httpClient.delete(`${this.url}${userId}${gameId}`, this.httpOptions).pipe(
-      catchError(this.errorHandler)
-    );
+  getByGame(id: number): Observable<any>{
+    return this.httpClient.get(`${this.url}game/${id}`)
   }
-
-
-
 
   errorHandler(error: any) {
     let errorMessage = '';
@@ -42,7 +39,7 @@ export class VentasService {
     } else {
       errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
     }
-
     return throwError(errorMessage);
   }
+
 }

@@ -37,8 +37,8 @@ export class PerfilComponent implements OnInit {
       console.log(this.facturas)
     })
 
-    this.ventasService.getVentas().subscribe((ventas: Ventas[]) =>{
-      this.ventas=ventas
+    this.ventasService.getVentaById(this.user.idUsuario).subscribe((ventas: Ventas[]) => {
+      this.ventas = ventas
       console.log(this.ventas)
     })
 
@@ -46,15 +46,15 @@ export class PerfilComponent implements OnInit {
     console.log(this.user);
   }
 
-  editar(){
+  editar() {
     this.isEditing = true
     const inputs = document.querySelectorAll<HTMLInputElement>('input[type="text"], input[type="email"], input[type="tel"]');
-  inputs.forEach((input: HTMLInputElement) => {
-    input.readOnly = !this.isEditing;
-  });
+    inputs.forEach((input: HTMLInputElement) => {
+      input.readOnly = !this.isEditing;
+    });
 
   }
-  actualizar(){
+  actualizar() {
     console.log(this.user)
     console.log(this.separatedWords)
     this.authService.modificarUsuario(this.user.email, this.user).subscribe(

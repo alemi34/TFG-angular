@@ -1,10 +1,9 @@
 <nav>
   <p routerLink="/" class="enlace">Inicio</p>
   <p routerLink="/venta" class="enlace">Solicitud Venta</p>
-  <!--TODO falta de hacer con el login y pasarle la redireccion e ID-->
   <p routerLink="/login" class="enlace" *ngIf="!user">Login</p>
   <p routerLink="/register" class="enlace" *ngIf="!user">Register</p>
-  <p routerLink="/perfil" class="enlace"*ngIf="user">Perfil</p>
+  <p routerLink="/perfil" class="enlace" *ngIf="user">Perfil</p>
   <p routerLink="/pagar" class="enlace">Carrito</p>
 </nav>
 <main>
@@ -16,12 +15,12 @@
         <div id="divNombre">
           <label for="Nombre">Nombre</label>
           <br>
-          <input type="text" name="Nombre" id="Nombre" [(ngModel)]="nombre"/>
+          <input type="text" name="Nombre" id="Nombre" [(ngModel)]="nombre" />
         </div>
         <div id="divApellido">
           <label for="Apellido">Apellido</label>
           <br>
-          <input type="text" name="Apellido" id="Apellido" [(ngModel)]="apellido"/>
+          <input type="text" name="Apellido" id="Apellido" [(ngModel)]="apellido" />
         </div>
       </div>
       <br>

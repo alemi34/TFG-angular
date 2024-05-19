@@ -1,10 +1,9 @@
 <nav>
   <p routerLink="/" class="enlace">Inicio</p>
   <p routerLink="/venta" class="enlace">Solicitud Venta</p>
-  <!--TODO falta de hacer con el login y pasarle la redireccion e ID-->
   <p routerLink="/login" class="enlace" *ngIf="!user">Login</p>
   <p routerLink="/register" class="enlace" *ngIf="!user">Register</p>
-  <p routerLink="/perfil" class="enlace"*ngIf="user">Perfil</p>
+  <p routerLink="/perfil" class="enlace" *ngIf="user">Perfil</p>
   <p routerLink="/pagar" class="enlace">Carrito</p>
 </nav>
 <main>
@@ -19,13 +18,18 @@
       <h2>Accion</h2>
       <h2>Aventura</h2>
       <h2>Multijugador</h2>
-  <button id="comprar" (click)="addTocart()">Agregar al carrito</button>
-
+      <button id="comprar" (click)="addTocart()" *ngIf="game.cantidad >0">Agregar al carrito</button>
     </div>
   </div>
   <div class="descripcion">{{game.descripcion}}</div>
   <div class="comentarios">
     <h2>Comentarios</h2>
-    <input type="text" maxlength="255" class="comentario" placeholder="Introduce tu comentario">
+    <input type="text" maxlength="255" class="comentario" [(ngModel)]="textocomentarios"
+      placeholder="Introduce tu comentario">
+    <button type="submit" (click)="nuevoComentario()" *ngIf="user">Comentar</button>
+    <div comentarios *ngFor="let comentarios2 of comentarios" class="textoComentario">
+      <p class="idUser">{{comentarios2.nombreUsuario}}</p>
+      <p class="Comentario">{{comentarios2.comentario}}</p>
+    </div>
   </div>
 </main>

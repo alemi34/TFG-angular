@@ -16,34 +16,34 @@ export class RegisterComponent {
   password2!: string
   public user!: Usuario;
 
-    constructor(
-      private authService: AuthService,
-      private router: Router
-    ) {}
+  constructor(
+    private authService: AuthService,
+    private router: Router
+  ) { }
 
-    ngOnInit(): void {
-      this.user = this.authService.getUsuario()
-      console.log(this.user)
-    }
+  ngOnInit(): void {
+    this.user = this.authService.getUsuario()
+    console.log(this.user)
+  }
 
-    crearUser() {
-      this.usuario.nombreCompleto = `${this.nombre} ${this.apellido}`;
-      if (this.password === this.password2) {
-        this.usuario.contraseña = this.password;
-        console.log('antes', this.usuario);
+  crearUser() {
+    this.usuario.nombreCompleto = `${this.nombre} ${this.apellido}`;
+    if (this.password === this.password2) {
+      this.usuario.contraseña = this.password;
+      console.log('antes', this.usuario);
 
-        this.authService.registerUsers(this.usuario).subscribe(
-          (response) => {
-            console.log('Registro exitoso:', response);
-            this.router.navigate(['/login']);
-          },
-          (error) => {
-            console.error('Error en el registro:', error);
-          }
-        );
-      } else {
-        console.error('Las contraseñas no coinciden');
-      }
+      this.authService.registerUsers(this.usuario).subscribe(
+        (response) => {
+          console.log('Registro exitoso:', response);
+          this.router.navigate(['/login']);
+        },
+        (error) => {
+          console.error('Error en el registro:', error);
+        }
+      );
+    } else {
+      console.error('Las contraseñas no coinciden');
     }
   }
+}
 

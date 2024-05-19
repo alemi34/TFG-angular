@@ -14,7 +14,7 @@ button {
   font-weight: 600;
 }
 
-.volver{
+.volver {
   margin-left: 2rem;
 }
 
@@ -43,7 +43,6 @@ button {
     align-items: center;
     flex-wrap: wrap;
     font-family: 'Exo2';
-
   }
 }
 
@@ -54,22 +53,22 @@ button {
   font-family: 'Exo2';
 }
 
-#comprar{
+#comprar {
   width: 75%;
   margin-top: 100%;
   font-family: 'Exo2';
-
 }
 
-.comentarios{
+.comentarios {
   margin-left: 10%;
   font-family: 'Exo2';
 
-  h2{
+  h2 {
     width: 90%;
     text-align: center;
   }
-  .comentario{
+
+  .comentario {
     width: 80%;
     height: 6rem;
     text-align: start;
@@ -93,3 +92,13 @@ nav p {
   border-right: 1px solid black;
 }
 
+.textoComentario {
+  margin-top: 2rem;
+  padding: 2rem;
+  width: 76.7%;
+  background-color: #9AD0C2;
+}
+
+p::first-letter{
+  text-transform: uppercase;
+}

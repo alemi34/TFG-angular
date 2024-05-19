@@ -9,11 +9,11 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './pagar.component.html',
   styleUrls: ['./pagar.component.scss']
 })
-export class PagarComponent implements OnInit{
+export class PagarComponent implements OnInit {
   items!: Juego[]
   public user!: Usuario;
 
-  constructor(private carrito:CarritoService, private authService: AuthService) { }
+  constructor(private carrito: CarritoService, private authService: AuthService) { }
 
   ngOnInit(): void {
     this.items = this.carrito.getItems();

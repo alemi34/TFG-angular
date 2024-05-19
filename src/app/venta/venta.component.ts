@@ -16,7 +16,7 @@ export class VentaComponent {
   imagenBytes: Uint8Array | undefined;
   public user!: Usuario;
 
-  constructor(private datosService: DatosService, private authService: AuthService){}
+  constructor(private datosService: DatosService, private authService: AuthService) { }
 
   ngOnInit(): void {
     this.user = this.authService.getUsuario()

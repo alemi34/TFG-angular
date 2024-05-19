@@ -58,6 +58,10 @@ export class AuthService {
     });
   }
 
+  getUserById(id: number): Observable<any> {
+    return this.httpClient.get(`${this.url}id/${id}`).pipe(catchError(this.errorHandler));
+  }
+
   getUsuario(): any {
     return this.usuario;
   }
