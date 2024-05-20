@@ -15,26 +15,26 @@
       </div>
 
       <div class="checkboxInput">
-        <input type="checkbox" name="Accion" id="Accion" value="Accion" [(ngModel)]="juego.categoria">
+        <input type="checkbox" name="Accion" id="Accion" value="Accion"  (change)="actualizarGeneros($event, 'Accion')">
         <label for="Accion">Accion</label>
 
-        <input type="checkbox" name="RPG" id="RPG" value="RPG">
+        <input type="checkbox" name="RPG" id="RPG" value="RPG" (change)="actualizarGeneros($event, 'Rpg')">
         <label for="RPG">RPG</label>
 
-        <input type="checkbox" name="Aventura" id="Aventura" value="Aventura">
+        <input type="checkbox" name="Aventura" id="Aventura" value="Aventura" (change)="actualizarGeneros($event, 'Aventura')">
         <label for="Aventura">Aventura</label>
 
 
-        <input type="checkbox" name="Multijugador" id="Multijugador" value="Multijugador">
+        <input type="checkbox" name="Multijugador" id="Multijugador" value="Multijugador" (change)="actualizarGeneros($event, 'Multijugador')">
         <label for="Multijugador">Multijugador</label>
 
-        <input type="checkbox" name="Single" id="Single" value="Single">
-        <label for="Single">Single</label>
+        <input type="checkbox" name="Un jugador" id="Single" value="Single" (change)="actualizarGeneros($event, 'Single')">
+        <label for="Un jugador">Un Jugador</label>
       </div>
 
 
       <div>
-        <input type="text" name="imagen" id="imagen">
+        <input type="text" name="imagen" id="imagen" [(ngModel)]="juego.imagen">
         <label for="imagen">URL imagen</label>
       </div>
 
@@ -48,7 +48,7 @@
         <label for="Descripcion">Descripcion</label>
       </div>
 
-      <button class="Vender" (click)="guardarDatos()">Vender</button>
+      <button class="Vender" (click)="guardarDatos()" *ngIf="user">Vender</button>
     </form>
 
   </div>

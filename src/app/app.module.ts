@@ -18,6 +18,8 @@ import { HistoricoVentaComponent } from './historico-venta/historico-venta.compo
 import { PagarComponent } from './pagar/pagar.component';
 import { FormsModule } from '@angular/forms';
 import { EditarVentaComponent } from './editar-venta/editar-venta.component';
+import { NgxPayPalModule } from 'ngx-paypal';
+
 
 
 
@@ -41,7 +43,8 @@ import { EditarVentaComponent } from './editar-venta/editar-venta.component';
     ButtonModule,
     InputTextModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgxPayPalModule
   ],
   providers: [],
   bootstrap: [AppComponent]

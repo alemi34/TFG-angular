@@ -14,11 +14,10 @@
   <div class="imagenYPlataformas">
     <img src="{{game.imagen}}" alt="{{game.nombre}}">
     <div class="categorias">
-      <h2>{{game.categoria}}</h2>
-      <h2>Accion</h2>
-      <h2>Aventura</h2>
-      <h2>Multijugador</h2>
-      <button id="comprar" (click)="addTocart()" *ngIf="game.cantidad >0">Agregar al carrito</button>
+      <ng-container *ngFor="let categoria of categorias">
+        <h2>{{categoria}}</h2>
+      </ng-container>
+      <button id="comprar" (click)="addTocart()" *ngIf="game.cantidad >0">Agregar al carrito, {{game.precio}}€</button>
     </div>
   </div>
   <div class="descripcion">{{game.descripcion}}</div>

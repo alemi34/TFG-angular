@@ -12,6 +12,11 @@
       <p>{{item.nombre}}</p>
       <p>{{item.precio}}</p>
     </div>
-    <button (click)="pagar()">Pagar</button>
+    <button (click)="pagar()" *ngIf="user">Pagar</button>
+
+    <!-- Botón de PayPal ngx-paypal -->
+    <div id="pago" *ngIf="payPalConfig">
+      <ngx-paypal [config]="payPalConfig" ></ngx-paypal>
+    </div>
   </div>
 </main>

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { catchError } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 import { Juego } from '../model/games';
 
@@ -27,18 +27,24 @@ export class DatosService {
   }
 
   createJuego(juego: Juego): Observable<any> {
-    console.log(juego)
-    return this.httpClient.post(this.url, juego, this.httpOptions).pipe(catchError(this.errorHandler));
+    console.log(juego);
+    return this.httpClient.post<any>(this.url, juego, this.httpOptions).pipe(
+      map(response => {
+        // Devuelve la ID del juego creado desde la respuesta
+        return response.idJuego;
+      }),
+      catchError(this.errorHandler)
+    );
   }
 
   searchGame(juego: string): Observable<any> {
-    console.log(juego)
+    console.log(juego);
     return this.httpClient.get(`${this.url}nombre/${juego}`).pipe(catchError(this.errorHandler))
   }
 
   modificarJuego(idJuego: number, Juego: Juego) {
-    console.log(Juego)
-    console.log(idJuego)
+    console.log(Juego);
+    console.log(idJuego);
     return this.httpClient.put(`${this.url}${idJuego}`, Juego, this.httpOptions).pipe(catchError(this.errorHandler));
   }
 

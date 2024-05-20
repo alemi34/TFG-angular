@@ -21,6 +21,7 @@ export class GameDetailComponent {
   public nuevosComentario: Comentario = new Comentario
   public textocomentarios!: string
   public separatedWords: any;
+  public categorias: string[] = [];
 
 
   constructor(public datosService: DatosService, private route: ActivatedRoute, private carrito: CarritoService, private authService: AuthService, private comentarioService: ComentarioService) { } // Agrega el servicio de usuarios
@@ -30,6 +31,8 @@ export class GameDetailComponent {
 
     this.datosService.getJuego(this.id).subscribe((juego: Juego) => {
       this.game = juego;
+      this.categorias =this.game.categoria.split(',').map(word => word.trim());
+      console.log(this.categorias)
     })
     this.user = this.authService.getUsuario()
     console.log(this.user)

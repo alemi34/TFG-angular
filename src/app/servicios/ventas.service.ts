@@ -35,6 +35,9 @@ export class VentasService {
     return this.httpClient.put(`${this.url}${userId}/${gameId}`, ventas, this.httpOptions).pipe(catchError(this.errorHandler));
   }
 
+  createVenta(venta: Ventas){
+    return this.httpClient.post(this.url, venta, this.httpOptions).pipe(catchError(this.errorHandler))
+  }
 
 
   errorHandler(error: any) {
