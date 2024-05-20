@@ -1,3 +1,4 @@
+import { Factura } from './../model/facturas';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, throwError } from 'rxjs';
@@ -24,6 +25,10 @@ export class FacturasService {
     return this.httpClient.get(`${this.url}ByUserId/${id}`)
   }
 
+  createFactura(factura : Factura){
+    console.log(factura)
+    return this.httpClient.post(this.url, factura, this.httpOptions).pipe(catchError(this.errorHandler));
+  }
 
 
 

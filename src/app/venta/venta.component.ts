@@ -23,17 +23,6 @@ export class VentaComponent {
     console.log(this.user)
   }
 
-  onFileSelected(event: Event) {
-    const inputElement = event.target as HTMLInputElement;
-    const files = inputElement.files;
-    if (files && files.length > 0) {
-      this.juego.imagen = files[0];
-    } else {
-      console.error('No se seleccionó ningún archivo');
-    }
-  }
-
-
   guardarDatos() {
     this.datosService.createJuego(this.juego)
       .subscribe(response => {

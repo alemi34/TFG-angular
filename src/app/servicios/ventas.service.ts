@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, throwError } from 'rxjs';
+import { Ventas } from '../model/ventas';
 
 @Injectable({
   providedIn: 'root'
@@ -25,12 +26,14 @@ export class VentasService {
   }
 
   deleteVenta(userId : number, gameId : number) {
-    // TODO hacer que cuando se quite uno se ponga en 0 la cantidad
     return this.httpClient.delete(`${this.url}${userId}${gameId}`, this.httpOptions).pipe(
       catchError(this.errorHandler)
     );
   }
 
+  modifyVenta(userId: number, gameId: number, ventas: Ventas){
+    return this.httpClient.put(`${this.url}${userId}/${gameId}`, ventas, this.httpOptions).pipe(catchError(this.errorHandler));
+  }
 
 
 
