@@ -7,7 +7,7 @@ import { Ventas } from '../model/ventas';
   providedIn: 'root'
 })
 export class VentasService {
-  private url = 'https://localhost:7149/api/UserBuy/'
+  private url = 'http://4.233.222.166:83/api/UserBuy/'
 
   httpOptions = {
     headers: new HttpHeaders({

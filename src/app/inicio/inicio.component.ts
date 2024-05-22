@@ -24,6 +24,10 @@ export class InicioComponent implements OnInit {
       this.juegos = juego;
     }
     )
+    this.datosService.getJuegos().subscribe((juego: Juego[]) => {
+      this.juegos = juego;
+    }
+    )
     this.user = this.authService.getUsuario()
     console.log(this.user)
   }

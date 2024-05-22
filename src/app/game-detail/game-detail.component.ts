@@ -34,6 +34,11 @@ export class GameDetailComponent {
       this.categorias =this.game.categoria.split(',').map(word => word.trim());
       console.log(this.categorias)
     })
+    this.datosService.getJuego(this.id).subscribe((juego: Juego) => {
+      this.game = juego;
+      this.categorias =this.game.categoria.split(',').map(word => word.trim());
+      console.log(this.categorias)
+    })
     this.user = this.authService.getUsuario()
     console.log(this.user)
 

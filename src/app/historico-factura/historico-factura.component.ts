@@ -23,6 +23,10 @@ export class HistoricoFacturaComponent {
       this.facturas = factura;
       console.log(this.facturas)
     })
+    this.facturaService.getFacturasById(this.user.idUsuario).subscribe((factura: Factura[]) => {
+      this.facturas = factura;
+      console.log(this.facturas)
+    })
 
   }
 }

@@ -30,6 +30,10 @@ export class EditarVentaComponent {
       this.juego = juegos
       console.log(this.juego)
     })
+    this.dataService.getJuego(this.idJuego).subscribe((juegos: Juego) => {
+      this.juego = juegos
+      console.log(this.juego)
+    })
   }
 
   editar() {

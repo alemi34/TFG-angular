@@ -7,7 +7,7 @@ import { Observable, catchError, throwError } from 'rxjs';
   providedIn: 'root'
 })
 export class FacturasService {
-  private url = 'https://localhost:7149/api/Facturas/'
+  private url = 'http://4.233.222.166:83/api/Facturas/'
 
   httpOptions = {
     headers: new HttpHeaders({

@@ -8,7 +8,7 @@ import { Comentario } from '../model/comentario';
 })
 
 export class ComentarioService {
-  private url = 'https://localhost:7149/api/Comentarios/'
+  private url = 'http://4.233.222.166:83/api/Comentarios/'
 
   httpOptions = {
     headers: new HttpHeaders({

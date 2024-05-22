@@ -36,7 +36,15 @@ export class PerfilComponent implements OnInit {
       this.facturas = factura;
       console.log(this.facturas)
     })
+    this.facturaService.getFacturasById(this.user.idUsuario).subscribe((factura: Factura[]) => {
+      this.facturas = factura;
+      console.log(this.facturas)
+    })
 
+    this.ventasService.getVentaById(this.user.idUsuario).subscribe((ventas: Ventas[]) => {
+      this.ventas = ventas
+      console.log(this.ventas)
+    })
     this.ventasService.getVentaById(this.user.idUsuario).subscribe((ventas: Ventas[]) => {
       this.ventas = ventas
       console.log(this.ventas)

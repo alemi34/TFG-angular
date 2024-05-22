@@ -9,7 +9,7 @@ import { Usuario } from '../model/user';
 export class AuthService {
   private isLogged: boolean = false;
   private userEmail!: string;
-  private url = 'https://localhost:7149/api/Usuarios/'
+  private url = 'http://4.233.222.166:83/api/Usuarios/'
   usuario!: Usuario
 
   httpOptions = {

@@ -24,6 +24,10 @@ export class HistoricoVentaComponent {
       this.ventas = ventas
       console.log(this.ventas)
     })
+    this.ventasService.getVentaById(this.user.idUsuario).subscribe((ventas: Ventas[]) => {
+      this.ventas = ventas
+      console.log(this.ventas)
+    })
   }
 
   editar(idGame: number){

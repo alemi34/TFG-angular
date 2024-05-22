@@ -13,7 +13,7 @@ main {
   display: flex;
   background-image: url('../../assets/image1.png');
   justify-content: center;
-  height: 80vh;
+  min-height: 80vh;
 
   p {
     font-family: 'Exo2';

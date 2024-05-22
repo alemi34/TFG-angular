@@ -8,7 +8,7 @@ import { Juego } from '../model/games';
   providedIn: 'root'
 })
 export class DatosService {
-  private url = 'https://localhost:7149/api/Juegos/'
+  private url = 'http://4.233.222.166:83/api/Juegos/'
 
   httpOptions = {
     headers: new HttpHeaders({
